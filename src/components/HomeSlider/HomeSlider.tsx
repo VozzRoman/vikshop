@@ -1,10 +1,8 @@
-import React, { FC } from 'react';
+import  { FC } from 'react';
 import SliderHomePage from 'react-slick';
 import './HomeSlcickTheme.scss';
 import './HomeSlickSlider.scss';
-// import bannerOne from '../../assets/images/adi3drunner.jpg';
-import bannerTow from '../../assets/images/adidas-1024x576.jpg';
-import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook';
+import { useAppSelector } from '../../hooks/reduxHook';
 import { IProducts } from '../../types/ICard';
 import { Link, useLocation } from 'react-router-dom';
 

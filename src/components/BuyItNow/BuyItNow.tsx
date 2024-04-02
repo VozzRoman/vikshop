@@ -6,6 +6,7 @@ import Order from '../Order/Order';
 import { ICard, IOrder } from '../../types/ICard';
 import { useLocation } from 'react-router-dom';
 import OrderFromBusket from '../OrderFromBusket/OrderFromBusket';
+import Container from '../Container/Container';
 
 
 
@@ -164,25 +165,29 @@ const BuyItNow: FC<BuyItNowProp> = ({handleToggleModal, setMessage, oreder}) => 
 	return (
 	<div>
 	{renderMarkUp()}
+	
 		<form 
 		onSubmit={handleSubmit} 
-		className={`mt-5 p-3 ${pathname ==='/makeOrderPage' ? "max-w-[700px]" : 'w-full'} overflow-y-auto`}>
+		className={`md:mt-5 mt-2 md:p-3 
+		${pathname ==='/makeOrderPage' ? "max-w-[700px]" : 'w-full'} 
+		${pathname ==='/makeOrderPage' ? "max-h-full" : 'max-h-[450px]'} 
+		md:max-h-full overflow-auto pr-3`}>
 		<div className='md:flex md:justify-between'>
-			<label className='mb-2 block w-[100%] sm:max-w-[250px]'>
-				<span className='block font-bold mb-1'>Name</span>
+			<label className='mb-2 block w-[100%] md:max-w-[250px]'>
+				<span className='md:text-[16px] text-sm text-20px block font-bold mb-1'>Name</span>
 				<input 
 				onChange={handleOnChange} 
-				className='border border-slate-400 w-full h-10 h-10 rounded-sm p-3' 
+				className='border border-slate-400 w-full md:h-10 md:text-[16px] text-sm h-[35px] text-20px rounded-sm p-3' 
 				placeholder='enter your name' 
 				type="text" 
 				name='name' 
 				value={dataForm.name}/>
 			</label>
-			<label className='mb-2 block w-[100%] sm:max-w-[250px]'>
-				<span className='block font-bold mb-1'>Email</span>
+			<label className='mb-2 block w-[100%] md:max-w-[250px]'>
+				<span className='block md:text-[16px] text-sm text-20px font-bold mb-1'>Email</span>
 				<input 
 				onChange={handleOnChange}  
-				className='border border-slate-400 w-full h-10 rounded-sm p-3' 
+				className='border border-slate-400 w-full h-10 rounded-sm p-3 md:h-10 md:text-[16px] text-sm h-[35px]' 
 				placeholder='enter your mail' 
 				type="text" 
 				name='email' 
@@ -190,11 +195,11 @@ const BuyItNow: FC<BuyItNowProp> = ({handleToggleModal, setMessage, oreder}) => 
 			</label>
 		</div>
 		<div className='md:flex md:justify-between'>
-			<label className='mb-2 block w-[100%] sm:max-w-[250px]'>
-			<span className='block font-bold mb-1'>Country</span>
+			<label className='mb-2 block w-[100%] md:max-w-[250px]'>
+			<span className='block md:text-[16px] text-sm text-20px font-bold mb-1'>Country</span>
 			<select 
 			onChange={handleOnSelectChange} 
-			className='border border-slate-400 w-full h-10 rounded-sm p-2' 
+			className='border border-slate-400 w-full h-10 rounded-sm p-2 md:h-10 md:text-[16px] text-sm h-[35px]' 
 			value={country}>
 						{dataCounrty.map(item => (
 							<option key={item.countryName} 
@@ -204,11 +209,11 @@ const BuyItNow: FC<BuyItNowProp> = ({handleToggleModal, setMessage, oreder}) => 
 						))}
 			</select>
 			</label>
-			<label className='mb-2 w-[100%] sm:max-w-[250px]'>
-			<span className='flex items-center font-bold mb-1 text-black'>City<p className='text-sm font-normal ml-1'>(before choose country)</p></span>
+			<label className='mb-2 w-[100%] md:max-w-[250px]'>
+			<span className='flex md:text-[16px] text-sm text-20px items-center font-bold mb-1 text-black'>City<p className='text-sm font-normal ml-1'>(before choose country)</p></span>
 			<select 
 			onChange={handleOnSelectCityChange} 
-			className='border border-slate-400 w-full h-10 rounded-sm p-2' 
+			className='border border-slate-400 w-full h-10 rounded-sm p-2 md:h-10 md:text-[16px] text-sm h-[35px]' 
 			value={selectCity}>
 			{city.map(item => (
 							<option 
@@ -221,32 +226,32 @@ const BuyItNow: FC<BuyItNowProp> = ({handleToggleModal, setMessage, oreder}) => 
 			</label>
 		</div>
 		<div className='md:flex md:justify-between'>
-			<label className='mb-2 block w-[100%] sm:max-w-[250px]'>
-				<span className='block font-bold mb-1'>Zip code</span>
+			<label className='mb-2 block w-[100%] md:max-w-[250px]'>
+				<span className='block md:text-[16px] text-sm text-20px font-bold mb-1'>Zip code</span>
 				<input 
 				onChange={handleOnChange}  
-				className='border border-slate-400 w-full h-10 h-10 rounded-sm p-3' 
+				className='border border-slate-400 w-full h-10 h-10 rounded-sm p-3 md:h-10 md:text-[16px] text-sm h-[35px]' 
 				placeholder='enter your zip code' 
 				type="number" 
 				name='zipCode' 
 				value={dataForm.zipCode}/>
 			</label>
-			<label className='mb-2 block w-[100%] sm:max-w-[250px]'>
-				<span className='block font-bold mb-1'>Adress</span>
+			<label className='mb-2 block w-[100%] md:max-w-[250px]'>
+				<span className='block md:text-[16px] text-sm text-20px font-bold mb-1'>Adress</span>
 				<input 
 				onChange={handleOnChange}  
-				className='border border-slate-400 w-full h-10 rounded-sm p-3' 
+				className='border border-slate-400 w-full h-10 rounded-sm p-3 md:h-10 md:text-[16px] text-sm h-[35px]' 
 				placeholder='enter your adress' 
 				type="text" 
 				name='adress' 
 				value={dataForm.adress}/>
 			</label>
 		</div>
-		<label className='mb-2 block w-[100%] sm:max-w-[250px]'>
-				<span className='block font-bold mb-1'>Phone</span>
+		<label className='mb-2 block w-[100%] md:max-w-[250px]'>
+				<span className='block md:text-[16px] text-sm text-20px font-bold mb-1'>Phone</span>
 				<input 
 				onChange={handleOnChange}  
-				className='border border-slate-400 w-full h-10 rounded-sm p-3' 
+				className='border border-slate-400 w-full h-10 rounded-sm p-3 md:h-10 md:text-[16px] text-sm h-[35px]' 
 				placeholder='enter your phone' 
 				type="number" 
 				name='phone' 
@@ -260,9 +265,10 @@ const BuyItNow: FC<BuyItNowProp> = ({handleToggleModal, setMessage, oreder}) => 
 		className={`
 		${buttonStatus ? 'bg-slate-300' : "bg-orange-300"} 
 		${buttonStatus ? 'hover:bg-slate-300' : "hover:bg-orange-400"}
-		h-[35px] rounded-sm w-full mt-5 text-white font-semibold  transition-colors duration-300`}>create order
+		h-[35px] rounded-sm w-full md:mt-5 mt-2 text-white font-semibold  transition-colors duration-300`}>create order
 		</button>
 		</form>
+	
 	</div>
 
 	);

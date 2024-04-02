@@ -30,16 +30,16 @@ const handleDelte = (id: number, e: React.MouseEvent<HTMLButtonElement, MouseEve
 		className={classNames(`absolute 
 		${isShowCard ? "visible" : "invisible"} 
 		${isShowCard ? "opacity-100" : "opacity-0"}
-		md:top-[67px] top-[55px] md:right-0 -right-7 w-full h-screen bg-transparent  transition:visible duration-500 ease-in-out z-50`)}>
-		<div className={classNames(`h-[552px] absolute rounded-sm p-4 
+		md:top-[67px] top-[55px] md:right-0 right-3 w-full h-screen bg-transparent  transition:visible duration-500 ease-in-out z-50`)}>
+		<div className={classNames(`lg:max-h-[552px] absolute rounded-sm p-4 
 		${isShowCard ? "visible" : "invisible"} 
 		${isShowCard ? "opacity-100" : "opacity-0"}
 		md:right-0 -right-7 max-w-96 w-full bg-slate-400 transition:visible duration-500 ease-in-out z-50`)}>
-		<ul className='h-[400px] overflow-x-auto'>
+		<ul className='lg:max-h-[400px] max-h-[300px] overflow-x-auto pr-2'>
 			{busketData.length === 0 && <p className='font-medium'>cart is empty! Add some</p>}
 		{busketData.map((card) => (
 			<li 
-			className='border-b-2 p-2 mb-3' 
+			className='border-b-2 p-2 pl-0 mb-3' 
 			key={card.id}>
 				<div className='flex'>
 					<div 

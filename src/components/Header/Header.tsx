@@ -10,7 +10,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import classNames from 'classnames';
 import { filteredSneakers, resetSearchQeary } from '../../redux/Products/productSlice';
 import useHideHeader from '../../hooks/hideHeaderHook';
-import { BiSolidCategory } from "react-icons/bi";
+
 
 const activeStyle = {
 	color: "#485667",
@@ -111,7 +111,7 @@ useEffect(() => {
 					 ${isOpenCatalog ? "visible" : "invisible"} 
 					 ${isOpenCatalog ? "h-[460px]" : "h-[0px]"} 
 					 ${isOpenCatalog ? "opacity-100" : "opacity-0"} 
-					 z-10 md:top-[150%] top-[150%] md:left-[0px] -left-[29px] bg-slate-400 z-[200] p-5 max-w-[200px] w-full rounded-sm transition:visible duration-500 ease-in-out shadow-md`)}>
+					 z-10 md:top-[150%] top-[150%] md:left-[0px] -left-[10px] bg-slate-400 z-[200] p-5 max-w-[200px] w-full rounded-sm transition:visible duration-500 ease-in-out shadow-md overflow-auto`)}>
 						<li className=''>
 							<NavLink onClick={resetHomePage}  className={scss.navLink} style={({ isActive }) => (isActive ? activeStyle : undefined)}  to="/">Home</NavLink>
 						</li>
