@@ -22,6 +22,7 @@ const handleDelte = (id: number, e: React.MouseEvent<HTMLButtonElement, MouseEve
 	const handleCloseBasketOnbackDrop = <T extends HTMLElement>(e: React.MouseEvent<T>) => {
 		if (e.target === e.currentTarget) {
 			setIsShowCard(false);
+			document.body.style.overflow = 'auto';
 		 }
 	}
 	return (

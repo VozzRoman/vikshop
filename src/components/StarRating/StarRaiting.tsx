@@ -12,7 +12,7 @@ const StarRating: FC<StartRatingProp> = ({item}) => {
   };
 
   return (
-    <div>
+    <div className='pl-[20px] pr-[20px]'>
       {[1, 2, 3, 4, 5].map((index) => (
         <span
           key={index}

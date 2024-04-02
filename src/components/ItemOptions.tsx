@@ -12,7 +12,7 @@ interface IItemOptions {
 
 const ItemOptions: FC<IItemOptions> = ({item, activeColor, handleSelectSize, handleSelectColor}) => {
 	return (
-		<div className='flex justify-between p-1'>
+		<div className='flex justify-between pt-1 pb-1 pl-[20px] pr-[20px]'>
 		<ul className='flex'>
 		{item.color.map((color, index) => (
 		<li  style={{background:`${color}`}} 

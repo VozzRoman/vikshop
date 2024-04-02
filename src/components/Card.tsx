@@ -64,8 +64,8 @@ const model: string = `?model=${item.name.split(' ').splice(1).join('_')}`
 
 
 	return (
-		<li ref={forwardRef} className=' xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-3' >
-			<div className='border p-4 rounded-md h-full flex flex-col'>
+		<li ref={forwardRef} className=' xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full sm:p-3 pb-3 pt-3' >
+			<div className='border rounded-md h-full flex flex-col'>
 			<div className='w-full overflow-hidden'>
 				<Link 
 				to={`${item.id + model}`} 
@@ -84,7 +84,7 @@ const model: string = `?model=${item.name.split(' ').splice(1).join('_')}`
 				<Link 
 				to={`${item.id + model}`} 
 				state={{from:location}}>
-			<p className='text-black p-2 mb-auto underline decoration-1 hover:text-blue-950 transition-colors duration-200'>
+			<p className='text-black pl-[20px] pr-[20px] pt-1 pb-1 mb-auto underline decoration-1 hover:text-blue-950 transition-colors duration-200'>
 				<span className='font-bold block'>
 					{item.name.split(' ')[0]}
 				</span> 
@@ -99,8 +99,10 @@ const model: string = `?model=${item.name.split(' ').splice(1).join('_')}`
 				handleSelectSize={handleSelectSize} 
 				activeColor={activeColor} 
 				handleSelectColor={handleSelectColor}/>
-			<p className='text-gray-800 font-bold'>${item.price}</p> 
-			<button onClick={handleAddToCart} className='text-white w-full pt-0.5 pb-0.5 pl-1.5 pr-1.5 bg-orange-500 hover:bg-orange-700 transition-all duration-300 rounded-sm mt-3 font-bold text-sm'>add to cart</button>
+			<p className='text-gray-800 font-bold pt-1 pb-1 pl-[20px] pr-[20px]'>${item.price}</p> 
+			<div className='pb-5 pl-[20px] pr-[20px]'>
+			<button onClick={handleAddToCart} className='text-white  w-full pt-1.5 pb-1.5 pl-1.5 pr-1.5 bg-orange-500 hover:bg-orange-700 transition-all duration-300 rounded-sm mt-3 font-bold text-sm'>add to cart</button>
+			</div>
 			</div>
 			</div>
 		</li>

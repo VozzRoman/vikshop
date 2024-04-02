@@ -12,6 +12,7 @@ import { filteredSneakers, resetSearchQeary } from '../../redux/Products/product
 import useHideHeader from '../../hooks/hideHeaderHook';
 
 
+
 const activeStyle = {
 	color: "#485667",
  };
@@ -28,7 +29,7 @@ const outCloseReff = useRef<HTMLDivElement>(null);
 const handleBasketOpen = () => {
 		setIsShowCard(prev => !prev);
 		setIsOpenCatalog(false);
-		
+		document.body.style.overflow = isShowCard ? 'auto' : 'hidden';
 	}
 
 
@@ -38,6 +39,7 @@ const handleOusideClick = (e: MouseEvent) => {
 if (outCloseReff.current && !outCloseReff.current.contains(e.target as Node)) {
 	setIsShowCard(false);
 	setIsOpenCatalog(false);
+	document.body.style.overflow = 'auto';
 
 }
 }
@@ -57,6 +59,7 @@ const handleCatalogOpen = () => {
 const closeCatalog = () => {
 	dispatch(filteredSneakers(''));
 	setIsOpenCatalog(false)
+	
 
 }
 const resetHomePage = () => {

@@ -6,16 +6,18 @@ const useHideHeader = () => {
   const [isHeaderHidden, setIsHeaderHidden] = useState<boolean>(false);
 
   const onScroll = useCallback(() => {
-    setTimeout(() => {
+   
       const scrollPosition = window.scrollY || window.pageXOffset;
       setScrollTop(scrollPosition);
       
-      if (scrollPosition > lastScroll && !isHeaderHidden) {
+      if (scrollPosition >= lastScroll && !isHeaderHidden) {
+			console.log('one')
         setIsHeaderHidden(true);
-      } else if (scrollPosition < lastScroll && isHeaderHidden) {
+      } else if (scrollPosition <= lastScroll && isHeaderHidden) {
+			console.log('tow')
         setIsHeaderHidden(false);
       }
-    }, 100); // Задержка в 500 миллисекунд
+   
   }, [lastScroll, isHeaderHidden]);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const useHideHeader = () => {
         setLastScroll(scrollTop);
       }
     };
-  }, [scrollTop, onScroll]);
+  }, [onScroll, scrollTop]);
 
   return { scrollTop, setScrollTop, lastScroll, isHeaderHidden };
 };

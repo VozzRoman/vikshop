@@ -6,8 +6,6 @@ import Order from '../Order/Order';
 import { ICard, IOrder } from '../../types/ICard';
 import { useLocation } from 'react-router-dom';
 import OrderFromBusket from '../OrderFromBusket/OrderFromBusket';
-import Container from '../Container/Container';
-
 
 
 interface BuyItNowProp {

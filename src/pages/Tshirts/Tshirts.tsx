@@ -85,7 +85,7 @@ const Tshirts: FC = () => {
 		return (
 				  <Container>
 					<div className='flex'>
-					<button onClick={handleFilterOpen} className='ml-5 fill-orange-400 hover:fill-orange-300 transition-colors duration-300'><IoFilterCircleSharp size={40} stroke={'white'} className='fill-inherit'/></button>
+					<button onClick={handleFilterOpen} className='ml-3 fill-orange-400 hover:fill-orange-300 transition-colors duration-300'><IoFilterCircleSharp size={40} stroke={'white'} className='fill-inherit'/></button>
 					{!tShirts.some(item => item.name.includes(query)) && 
 					<div className='flex w-full'>
 						<button className=' hover:text-orange-500 underline transition-colors duration-300 p-0.5 rounded-md text-gray-900 font-medium max-w-[200px] w-full' onClick={handleBackToList}>Back to list</button>

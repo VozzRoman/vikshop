@@ -87,7 +87,7 @@ useEffect(() => {
 				<div className='flex'>
 				<button 
 				onClick={handleFilterOpen} 
-				className='ml-5 fill-orange-400 hover:fill-orange-300 transition-colors duration-300'>
+				className='ml-3 fill-orange-400 hover:fill-orange-300 transition-colors duration-300'>
 				<IoFilterCircleSharp 
 				size={40} 
 				stroke={'white'} 
