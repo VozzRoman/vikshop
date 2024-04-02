@@ -191,7 +191,7 @@ const handleRestFilter = () => {
 		transition:visible duration-300 bg-slate-500 w-full h-full left-0 top-0 z-50 bg-opacity-35`)}>
 				<div className={classNames(` 
 				${isFilter ? "translate-x-0" : "-translate-x-[100%]"} 
-				transition:translate duration-300 max-w-[250px] p-[30px] w-full rounded-r-lg bg-slate-800 mt-[85px]`)}>
+				transition:translate duration-300 max-w-[350px] p-[30px] w-full rounded-r-lg bg-slate-800 mt-[85px]`)}>
 					<form 
 					onSubmit={handleSubmit}>
 					<label className='block'>

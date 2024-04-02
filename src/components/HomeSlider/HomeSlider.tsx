@@ -29,7 +29,7 @@ const location = useLocation();
 		autoplay: true
 	 };
 	return (
-		<div className='md:w-2/3 md:h-96 h-72 bg-gradient-to-tr md:mr-5 rounded overflow-hidden'>
+		<div className='md:w-2/3 w-full md:h-96 h-72 bg-gradient-to-tr md:mr-5 rounded overflow-hidden'>
 			<SliderHomePage {...settings} className='homePageSLider'>
 				{banner.map(slide => {
 					const model: string = `?model=${slide.name.split(' ').splice(1).join('_')}`

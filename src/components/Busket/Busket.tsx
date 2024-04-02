@@ -14,7 +14,10 @@ interface BuskeProps {
 const Busket: FC<BuskeProps> = ({isShowCard ,total, setIsShowCard}) => {
 const dispatch = useAppDispatch();
 const busketData = useAppSelector(state => state.cartReducer.cart);
-
+const handleMakeOrder = () => {
+	setIsShowCard(false)
+	document.body.style.overflow = 'auto';
+}
 const handleDelte = (id: number, e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 	e.stopPropagation();
 		dispatch(deleteFromCart(id));
@@ -78,7 +81,7 @@ const handleDelte = (id: number, e: React.MouseEvent<HTMLButtonElement, MouseEve
 			</p>
 		</div>
 		 <Link 
-		 onClick={() => setIsShowCard(false)} 
+		 onClick={handleMakeOrder} 
 		 to='/makeOrderPage' 
 		 className='bg-orange-500 block text-center relative z-[300] w-full text-white pt-2 pb-2 pl-3 pr-3 font-bold mt-5 rounded-sm hover:bg-orange-800 transition-all'>make order</Link>
 	</div>
