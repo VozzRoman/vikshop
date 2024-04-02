@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+// Default Variables
+
+// Slick icon entity codes outputs the following
+// "\2190" outputs ascii character "←"
+// "\2192" outputs ascii character "→"
+// "\2022" outputs ascii character "•"
+
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+@function slick-image-url($url) {
+    @if function-exists(image-url) {
+        @return image-url($url);
+    }
+    @else {
+        @return url($slick-loader-path + $url);
+    }
+}
+
+@function slick-font-url($url) {
+    @if function-exists(font-url) {
+        @return font-url($url);
+    }
+    @else {
+        @return url($slick-font-path + $url);
+    }
+}
+
+/* Slider */
+
+
+/* Icons */
+
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+    font-size: 0px;
+    cursor: pointer;   
+    top: 40%;
+	 z-index: 100;
+    &:hover {
+        outline: none;
+        background: transparent;
+        color: transparent;
+        &:before {
+            opacity: 1;
+				color: orange;
+        }
+    }
+    &.slick-disabled:before {
+        opacity: 0.5;
+    }
+    &:before {
+        color: black;
+
+    }
+}
+
+.slick-prev {
+    left: -20px;
+    [dir="rtl"] & {
+        left: auto;
+        right: -25px;
+    }
+    &:before {
+        content: "\276E";
+		  font-size: 25px;
+ 
+    }
+}
+
+.slick-next {
+    right: -20px;
+    [dir="rtl"] & {
+        left: -20px;
+        right: auto;
+    }
+    &:before {
+        content: "\276F";
+		  font-size: 25px;
+
+    }
+}
+
+/* Dots */
+
+.slick-dots {
+  
+    li {
+        position: relative;
+		//   flex: 0 1 33.3333%;
+        display: inline-block;
+        height: 70px; // размер высоты картинки!
+        margin: 5px;
+
+        padding: 0;
+        cursor: pointer;     
+		  @media screen and (min-width: 520px) {
+			// width: 70px;
+		} 
+    }
+}

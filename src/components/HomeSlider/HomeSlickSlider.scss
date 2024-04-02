@@ -1,0 +1,30 @@
+/* Slider */
+
+.homePageSLider .slick-slider {
+	display: flex;
+	
+}
+
+
+.homePageSLider .slick-track{
+	display: flex;
+	height: 24rem; //ширина слайдера
+
+}
+.homePageSLider .slick-list{
+	overflow: hidden;
+}
+
+
+.homePageSLider .slick-slide{
+position: relative;
+	img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+
+}

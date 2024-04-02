@@ -1,0 +1,30 @@
+/* Slider */
+
+.productSLider .slick-slider {
+	display: flex;
+}
+
+//----Slider style
+
+.slick-track{
+	display: flex;
+
+}
+.slick-list{
+	overflow: hidden;
+}
+
+
+.productSLider .slick-slide{
+margin-bottom: 10px;
+	img{
+		width: 100%;
+		height: 380px;
+		object-fit: fill;
+		@media screen and (min-width: 520px) {
+			object-fit: cover;
+			height: 480px;
+		}
+	}
+
+}

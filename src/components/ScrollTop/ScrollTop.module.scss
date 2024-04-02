@@ -1,0 +1,53 @@
+
+.blob {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgb(235, 153, 13);
+	border-radius: 50%;
+	margin: 10px;
+	height: 40px;
+	width: 40px;
+	transition: background 300ms linear, visibility 300ms linear, opacity 300ms linear;
+	&:hover{
+		animation: pulse;
+		animation-play-state: paused;
+		background: rgb(235, 117, 13);
+	}
+	@media screen and (min-width: 768px) {
+		right: 100px;
+		height: 60px;
+		width: 60px;
+	}
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+	visibility: hidden;
+	opacity: 0;
+	&.active{
+		visibility: visible;
+		opacity: 100;
+
+	}
+}
+
+@keyframes pulse {
+
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(29, 41, 60, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}

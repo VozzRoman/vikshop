@@ -1,0 +1,38 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
+:root {
+  font-family: Arial, Helvetica, sans-serif, Helvetica, sans-serif, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body{
+	overflow-x: hidden !important;
+}
+
+::-webkit-scrollbar {
+  width: 7px; 
+  height: 7px; 
+  border-radius: 6px;
+  
+}
+::-webkit-scrollbar-thumb {
+  background-color: #b47b00;
+ 
+}
+::-webkit-scrollbar-track {
+  background-color: #9ea9bb;
+
+}
+

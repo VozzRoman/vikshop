@@ -1,0 +1,15 @@
+
+ .navLink{
+ 	color: white;
+	font-size: 19px;
+ 	transition: color 250ms linear;
+	font-weight: 400;
+	display: block;
+	border-bottom: 1px solid hsl(0, 0%, 100%, 0.3);
+	
+ 	&:hover{
+ 		color: rgb(209, 78, 3);
+ 	}
+
+ }
+
