@@ -35,14 +35,16 @@ const handleBasketOpen = () => {
 
 const total = dataCart.reduce((acc, total) => acc + (total.price * total.count), 0);
 
-const handleOusideClick = (e: MouseEvent) => {
-if (outCloseReff.current && !outCloseReff.current.contains(e.target as Node)) {
-	setIsShowCard(false);
-	setIsOpenCatalog(false);
-	document.body.style.overflow = 'auto';
+// const handleOusideClick = (e: MouseEvent) => {
 
-}
-}
+// if (outCloseReff.current && !outCloseReff.current.contains(e.target as Node)) {
+// 	setIsShowCard(false);
+// 	setIsOpenCatalog(false);
+	
+// 	document.body.style.overflow = 'auto';
+
+// }
+// }
 
 const resetSneakersPage = () => {
 
@@ -75,16 +77,17 @@ const handleCloseBasketOnbackDrop = <T extends HTMLElement>(e: React.MouseEvent<
 	 }
 }
 
-useEffect(() => {
-	document.addEventListener("click", handleOusideClick);
-	return () => {
-		document.removeEventListener("click", handleOusideClick);
-	}
-}, [])
+// useEffect(() => {
+// 	document.addEventListener("click", handleOusideClick);
+// 	return () => {
+// 		document.removeEventListener("click", handleOusideClick);
+// 	}
+// }, [])
 
 
 useEffect(() => {
 	if(isHeaderHidden){
+		console.log("click");
 		setIsOpenCatalog(false);
 		setIsShowCard(false);
 	}

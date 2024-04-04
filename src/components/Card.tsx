@@ -100,7 +100,7 @@ const model: string = `?model=${item.name.split(' ').splice(1).join('_')}`
 				handleSelectColor={handleSelectColor}/>
 			<p className='text-gray-800 font-bold pt-1 pb-1 pl-[20px] pr-[20px]'>${item.price}</p> 
 			<div className='pb-5 pl-[20px] pr-[20px]'>
-			<button type='button' onClick={handleAddToCart} className='text-white  w-full md:pt-1.5 md:pb-1.5 md:pl-1.5 md:pr-1.5 pt-3 pb-3 bg-orange-500 transition-all duration-300 rounded-sm mt-3 font-bold text-sm'>add to cart</button>
+			<button type='button' onClick={handleAddToCart} className='text-white  w-full md:pt-1.5 md:pb-1.5 md:pl-1.5 md:pr-1.5 pt-3 pb-3 bg-orange-500 hover:bg-orange-600 transition-all duration-300 rounded-sm mt-3 font-bold text-sm'>add to cart</button>
 			</div>
 			</div>
 			</div>

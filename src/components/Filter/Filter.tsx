@@ -265,7 +265,7 @@ useEffect(() => {
 	return (
 		<div 
 		onClick={handleOutSideClick} 
-		className={classNames(`absolute visible 
+		className={classNames(`absolute 
 		${isFilter ? "visible" : "invisible"} 
 		${isFilter ? "opacity-100" : "opacity-0"} 
 		transition:visible duration-300 bg-slate-500 w-full h-full left-0 top-0 z-50 bg-opacity-35`)}>
