@@ -9,12 +9,9 @@ const useHideHeader = () => {
    
       const scrollPosition = window.scrollY || window.pageXOffset;
       setScrollTop(scrollPosition);
-      
-      if (scrollPosition >= lastScroll && !isHeaderHidden) {
-			console.log('one')
+      if (scrollPosition >= lastScroll && !isHeaderHidden) {	
         setIsHeaderHidden(true);
       } else if (scrollPosition <= lastScroll && isHeaderHidden) {
-			console.log('tow')
         setIsHeaderHidden(false);
       }
    

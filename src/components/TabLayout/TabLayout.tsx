@@ -17,10 +17,6 @@ const TabLayout: FC = () => {
 	const {state} = useLocation();
 const searchLink = useRef(state?.from.search);
 const backLink = useRef(state?.from.pathname);
-console.log("Back", backLink);
-console.log("searchLink", searchLink);
-
-
 
 
 	const item = data.find(prod => prod.id === Number(id))!;

@@ -8,6 +8,7 @@ interface ProductState {
 	filteredProducts: IProducts[],
 	query: string,
 	error: string,
+	isFilterAction: boolean | null,
 
 	
 }
@@ -18,6 +19,7 @@ interface FilterAction {
 	color?: string,
 	categories?: string,
 
+
 }
 
 const initialState: ProductState = {
@@ -25,6 +27,7 @@ const initialState: ProductState = {
 	filteredProducts: [],
 	query: '',
 	error:'',
+	isFilterAction: null,
 
 }
 
@@ -66,8 +69,10 @@ export const productSlice = createSlice ({
 					   //проверка если товара нету!
 				if(state.filteredProducts.length === 0){
 						state.error = "No product found"
+						state.isFilterAction = true;
 					} else {
 						state.error = '';
+						state.isFilterAction = false;
 					}
 					  return;
 				 }
@@ -80,8 +85,10 @@ export const productSlice = createSlice ({
 					  //проверка если товара нету!
 				if(state.filteredProducts.length === 0){
 						state.error = "No product found"
+						state.isFilterAction = true
 					} else {
 						state.error = '';
+						state.isFilterAction = false
 					}
 					  return;
 				 }
@@ -94,8 +101,10 @@ export const productSlice = createSlice ({
 						//проверка если товара нету!
 				if(state.filteredProducts.length === 0){
 					state.error = "No product found"
+					state.isFilterAction = true
 				} else {
 					state.error = '';
+					state.isFilterAction = false
 				}
 						return;
 					}
@@ -108,8 +117,10 @@ export const productSlice = createSlice ({
 					//проверка если товара нету!
 				if(state.filteredProducts.length === 0){
 					state.error = "No product found"
+					state.isFilterAction = true
 				} else {
 					state.error = '';
+					state.isFilterAction = false
 				}
 						return;
 					}
@@ -121,8 +132,10 @@ export const productSlice = createSlice ({
 					).filter(item => item.category === categories)
 					if(state.filteredProducts.length === 0){
 						state.error = "No product found"
+						state.isFilterAction = true
 					} else {
 						state.error = '';
+						state.isFilterAction = false
 					}
 					   return;
 					}
@@ -135,8 +148,10 @@ export const productSlice = createSlice ({
 					//проверка если товара нету!
 				if(state.filteredProducts.length === 0){
 					state.error = "No product found"
+					state.isFilterAction = true
 				} else {
 					state.error = '';
+					state.isFilterAction = false
 				}
 					   return;
 					}
@@ -149,8 +164,10 @@ export const productSlice = createSlice ({
 					//проверка если товара нету!
 				if(state.filteredProducts.length === 0){
 					state.error = "No product found"
+					state.isFilterAction = true
 				} else {
 					state.error = '';
+					state.isFilterAction = false
 				}
 						return;
 					}
@@ -164,8 +181,10 @@ export const productSlice = createSlice ({
 					//проверка если товара нету!
 				if(state.filteredProducts.length === 0){
 					state.error = "No product found"
+					state.isFilterAction = true
 				} else {
 					state.error = '';
+					state.isFilterAction = false
 				}
 					return;
 					}
@@ -178,8 +197,10 @@ export const productSlice = createSlice ({
 					//проверка если товара нету!
 				if(state.filteredProducts.length === 0){
 					state.error = "No product found"
+					state.isFilterAction = true
 				} else {
 					state.error = '';
+					state.isFilterAction = false
 				}
 					return;
 					}
@@ -192,8 +213,10 @@ export const productSlice = createSlice ({
 					//проверка если товара нету!
 				if(state.filteredProducts.length === 0){
 					state.error = "No product found"
+					state.isFilterAction = true
 				} else {
 					state.error = '';
+					state.isFilterAction = false
 				}
 					return;
 					}

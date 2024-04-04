@@ -11,7 +11,7 @@ interface FilterProps {
 }
 
 const Filter: FC<FilterProps> = ({setIsFilter, isFilter, data}) => {
-	
+	console.log(isFilter);
 	const [sneakersData, setSneakersData ]= useState<IProducts[]>([]);
 
 	const nameArray = [...new Set(sneakersData.map(sneaker => sneaker.name.split(' ').splice(0, 1).join(' ')))];
@@ -25,6 +25,7 @@ const Filter: FC<FilterProps> = ({setIsFilter, isFilter, data}) => {
 
 	const dispatch = useAppDispatch();
 	const error = useAppSelector(state => state.productReducer.error);
+	const filterIsReduxOpen = useAppSelector(state => state.productReducer.isFilterAction);
 	const highestPrice = Math.max(...priceArray);
 	const filtredCategory = sneakersData.map(item => item.category)[0];
 	
@@ -69,7 +70,14 @@ if(model !=="" && size !=="" && price !== 0 && color !==""){
 				categories: filtredCategory,
 			}
 			
-			return dispatch(mainFilter(dataValue))
+			dispatch(mainFilter(dataValue))
+			if(filterIsReduxOpen === true){
+				setIsFilter(true)
+				return
+			} else {
+				setIsFilter(false);
+				return
+			}
 		}
 //если выбраны значения model size price
 if(model !=="" && size !=="" && price !== 0){
@@ -79,7 +87,9 @@ if(model !=="" && size !=="" && price !== 0){
 		price,
 		categories: filtredCategory,
 	}
-	return dispatch(mainFilter(dataValue))
+	dispatch(mainFilter(dataValue))
+	
+	return
 }
 //если выбраны значения model size color
 if(model !=="" && size !=="" && color !==""){
@@ -89,7 +99,9 @@ if(model !=="" && size !=="" && color !==""){
 		color,
 		categories: filtredCategory,
 	}
-	return dispatch(mainFilter(dataValue))
+	dispatch(mainFilter(dataValue))
+
+	return
 }
 //если выбраны значения size color price
 if(size !=="" && color !=="" && price !== 0){
@@ -99,7 +111,9 @@ if(size !=="" && color !=="" && price !== 0){
 		price,
 		categories: filtredCategory,
 	}
-	return dispatch(mainFilter(dataValue))
+	dispatch(mainFilter(dataValue))
+	setIsFilter(false);
+	return
 }
 //если выбраны значения model size
 if(model !=="" && size !==""){
@@ -107,9 +121,20 @@ if(model !=="" && size !==""){
 		size,
 		model,
 		categories: filtredCategory,
+		
 	}
-	return dispatch(mainFilter(dataValue))
-}
+	dispatch(mainFilter(dataValue))
+	if(filterIsReduxOpen === true){
+		setIsFilter(true)
+		return
+	} else {
+		setIsFilter(false);
+		return
+	}
+	
+ } 
+
+
 //если выбраны значения size color
 if(size !=="" && color !==""){
 	const dataValue = {
@@ -117,7 +142,14 @@ if(size !=="" && color !==""){
 		color,
 		categories: filtredCategory,
 	}
-	return dispatch(mainFilter(dataValue))
+	dispatch(mainFilter(dataValue))
+	if(filterIsReduxOpen === true){
+		setIsFilter(true)
+		return
+	} else {
+		setIsFilter(false);
+		return
+	}
 }
 //если выбраны значения model color
 if(model !=="" && color !==""){
@@ -126,16 +158,30 @@ if(model !=="" && color !==""){
 		color,
 		categories: filtredCategory,
 	}
-	return dispatch(mainFilter(dataValue))
+	dispatch(mainFilter(dataValue))
+	if(filterIsReduxOpen === true){
+		setIsFilter(true)
+		return
+	} else {
+		setIsFilter(false);
+		return
+	}
 }
-//если выбраны значения model color
+//если выбраны значения model price
 if(model !=="" && price !== 0){
 	const dataValue = {
 		model,
 		price,
 		categories: filtredCategory,
 	}
-	return dispatch(mainFilter(dataValue))
+	dispatch(mainFilter(dataValue))
+	if(filterIsReduxOpen === true){
+		setIsFilter(true)
+		return
+	} else {
+		setIsFilter(false);
+		return
+	}
 }
 //если выбраны значения size price
 if(size !=="" && price !== 0){
@@ -144,7 +190,14 @@ if(size !=="" && price !== 0){
 		price,
 		categories: filtredCategory,
 	}
-	return dispatch(mainFilter(dataValue))
+	dispatch(mainFilter(dataValue))
+	if(filterIsReduxOpen === true){
+		setIsFilter(true)
+		return
+	} else {
+		setIsFilter(false);
+		return
+	}
 }
 //если выбраны значения color price
 if(color !=="" && price !== 0){
@@ -153,23 +206,37 @@ if(color !=="" && price !== 0){
 		price,
 		categories: filtredCategory,
 	}
-	return dispatch(mainFilter(dataValue))
+	dispatch(mainFilter(dataValue))
+	if(filterIsReduxOpen === true){
+		setIsFilter(true)
+		return
+	} else {
+		setIsFilter(false);
+		return
+	}
 }
 
 if(model !== ""){
-	return dispatch(mainFilter(model.toLocaleLowerCase()));
+	 dispatch(mainFilter(model.toLocaleLowerCase())); 
+	 setIsFilter(false);
+	 return 
 }
 if(size !== ""){
-	return dispatch(mainFilter(size));
+	dispatch(mainFilter(size));
+	setIsFilter(false);
+	return 
 }
 if(color !== ""){
-	return dispatch(mainFilter(color));
+	dispatch(mainFilter(color));
+	setIsFilter(false);
+	return 
 }
 if(price !== 0){
-	return dispatch(mainFilter(price));
+	dispatch(mainFilter(price));
+	setIsFilter(false);
+	return 
 } 
 dispatch(mainFilter(''))
-
 
 }
 
@@ -179,7 +246,20 @@ const handleRestFilter = () => {
 		setSize('');
 		setColor('');
 		dispatch(mainFilter(''));
+		
 	}
+
+	//вчера!!!
+useEffect(() => {
+	if(filterIsReduxOpen === true){
+		setIsFilter(true)
+		return
+	} else {
+		setIsFilter(false);
+		return
+	}
+	
+}, [filterIsReduxOpen]);	
 	
 
 	return (

@@ -68,12 +68,20 @@ const resetHomePage = () => {
 	dispatch(resetSearchQeary([]));
 }
 
+const handleCloseBasketOnbackDrop = <T extends HTMLElement>(e: React.MouseEvent<T>) => {
+	if (e.target === e.currentTarget) {
+		setIsOpenCatalog(false);
+		document.body.style.overflow = 'auto';
+	 }
+}
+
 useEffect(() => {
 	document.addEventListener("click", handleOusideClick);
 	return () => {
 		document.removeEventListener("click", handleOusideClick);
 	}
 }, [])
+
 
 useEffect(() => {
 	if(isHeaderHidden){
@@ -110,11 +118,15 @@ useEffect(() => {
 					size={35} 
 					color='orange'/>
 					</button>
+					<div onClick={handleCloseBasketOnbackDrop} className={`absolute left-0 w-full h-screen bg-transparent md:top-[63px] top-[55px] transition:visible duration-500 ease-in-out
+					 ${isOpenCatalog ? "visible" : "invisible"} 
+					 ${isOpenCatalog ? "opacity-100" : "opacity-0"}
+					`}>
 					 <ul id="sidebar" className={classNames(`absolute 
 					 ${isOpenCatalog ? "visible" : "invisible"} 
 					 ${isOpenCatalog ? "h-[460px]" : "h-[0px]"} 
 					 ${isOpenCatalog ? "opacity-100" : "opacity-0"} 
-					 z-10 md:top-[150%] top-[150%] md:left-[0px] -left-[10px] bg-slate-400 z-[200] p-5 max-w-[200px] w-full rounded-sm transition:visible duration-500 ease-in-out shadow-md overflow-auto`)}>
+					 md:left-[0px] -left-[10px] bg-slate-400 z-[200] p-5 max-w-[200px] w-full rounded-sm transition:visible duration-500 ease-in-out shadow-md`)}>
 						<li className=''>
 							<NavLink onClick={resetHomePage}  className={scss.navLink} style={({ isActive }) => (isActive ? activeStyle : undefined)}  to="/">Home</NavLink>
 						</li>
@@ -143,6 +155,7 @@ useEffect(() => {
 							<NavLink onClick={closeCatalog} className={scss.navLink} style={({ isActive }) => (isActive ? activeStyle : undefined)} to="/makeOrderPage">My orders</NavLink>
 						</li>
 					</ul>
+					</div>
 					<SearchForm />
 				<div>
 

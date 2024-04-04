@@ -74,7 +74,7 @@ const model: string = `?model=${item.name.split(' ').splice(1).join('_')}`
 				<img 
 				onError={handleErrorImage} 
 				src={onImageError ? noImage  : item.imagePath[0]} alt={item.name} 
-				className='sm:h-44 w-full h-80 object-cover'/>
+				className='sm:h-44 w-full h-80 object-cover rounded-t-lg'/>
 				</div>
 				</Link>
 			</div>
