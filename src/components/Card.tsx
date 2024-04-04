@@ -27,7 +27,7 @@ const handleErrorImage = () => {
 }
 const dispatch = useAppDispatch();
 	const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-		e.stopPropagation();
+		// e.stopPropagation();
 		const product = products.find(prod => prod.id === item.id)!
 		const id: number = Date.now();
 if(color || size){
@@ -101,7 +101,7 @@ const model: string = `?model=${item.name.split(' ').splice(1).join('_')}`
 				handleSelectColor={handleSelectColor}/>
 			<p className='text-gray-800 font-bold pt-1 pb-1 pl-[20px] pr-[20px]'>${item.price}</p> 
 			<div className='pb-5 pl-[20px] pr-[20px]'>
-			<button onClick={handleAddToCart} className='text-white  w-full pt-1.5 pb-1.5 pl-1.5 pr-1.5 bg-orange-500 hover:bg-orange-700 transition-all duration-300 rounded-sm mt-3 font-bold text-sm'>add to cart</button>
+			<button onClick={handleAddToCart} className='text-white  w-full pt-1.5 pb-1.5 pl-1.5 pr-1.5 bg-orange-500 md:hover:bg-orange-700 transition-all duration-300 rounded-sm mt-3 font-bold text-sm'>add to cart</button>
 			</div>
 			</div>
 			</div>
