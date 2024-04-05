@@ -1,6 +1,6 @@
 
 .blob {
-	position: absolute;
+	position: fixed;
 	bottom: 20px;
 	right: 20px;
 	cursor: pointer;
@@ -13,11 +13,7 @@
 	height: 40px;
 	width: 40px;
 	transition: background 300ms linear, visibility 300ms linear, opacity 300ms linear;
-	&:hover{
-		animation: pulse;
-		animation-play-state: paused;
-		background: rgb(235, 117, 13);
-	}
+
 	@media screen and (min-width: 768px) {
 		right: 100px;
 		height: 60px;
