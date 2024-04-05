@@ -22,16 +22,16 @@ const ScrollTop = () => {
 	// 	}
 	// }, [])
 
-	// const scrollUp = () => {
-	// 	window.scrollTo({
-	// 		top: 0,
-	// 		behavior: 'smooth',
-	// 	})
-	// }
+	const scrollUp = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		})
+	}
 	return (
 		<div>
 				<div 
-				// onClick={scrollUp} 
+				onClick={scrollUp} 
 				className={`${scss.blob}`}>
 					<SlArrowUp 
 					size={25} 
