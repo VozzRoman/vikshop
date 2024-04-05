@@ -21,7 +21,6 @@ const ScrollTop = () => {
 			behavior: 'smooth',
 		})
 	}
-
 	return (
 		<div>
 				<button 

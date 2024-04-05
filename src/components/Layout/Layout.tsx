@@ -13,9 +13,10 @@ const Layout = () => {
 			<Outlet/>
 			</section>
 		</main>
-		{/* <ScrollTop/> */}
 		<Footer/>
+		<ScrollTop/>
 		</div>
+		
 	)
 };
 
