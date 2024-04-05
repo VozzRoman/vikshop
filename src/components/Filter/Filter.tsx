@@ -11,7 +11,7 @@ interface FilterProps {
 }
 
 const Filter: FC<FilterProps> = ({setIsFilter, isFilter, data}) => {
-	console.log(isFilter);
+
 	const [sneakersData, setSneakersData ]= useState<IProducts[]>([]);
 
 	const nameArray = [...new Set(sneakersData.map(sneaker => sneaker.name.split(' ').splice(0, 1).join(' ')))];

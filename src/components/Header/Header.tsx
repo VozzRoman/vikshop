@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import Container from '../Container/Container';
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook';
@@ -85,17 +85,17 @@ const handleCloseBasketOnbackDrop = <T extends HTMLElement>(e: React.MouseEvent<
 // }, [])
 
 
-useEffect(() => {
-	if(isHeaderHidden){
+// useEffect(() => {
+// 	if(isHeaderHidden){
 		
-		if(isShowCard === true || isOpenCatalog === true){
-			console.log("click Зшп");
-			setIsShowCard(false);
-			setIsOpenCatalog(false);
-		}
+// 		if(isShowCard === true || isOpenCatalog === true){
+// 			console.log("click Зшп");
+// 			setIsShowCard(false);
+// 			setIsOpenCatalog(false);
+// 		}
 		
-	}
-}, [isHeaderHidden])
+// 	}
+// }, [isHeaderHidden])
 
 	return (
 		<div>

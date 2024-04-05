@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SlArrowUp } from "react-icons/sl";
 import scss from './ScrollTop.module.scss';
-import { Link } from 'react-router-dom';
+
 
 const ScrollTop = () => {
 	const [backToTop, setBackToTop] = useState<boolean>(false);
