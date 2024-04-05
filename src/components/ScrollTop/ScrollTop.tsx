@@ -6,14 +6,20 @@ import scss from './ScrollTop.module.scss';
 const ScrollTop = () => {
 	const [backToTop, setBackToTop] = useState<boolean>(false);
 
+	const handleScroll = () => {
+		if(window.scrollY > 100) {
+			setBackToTop(true);
+		} else {
+			setBackToTop(false);
+		}
+	}
+
 	useEffect(() => {
-		window.addEventListener('scroll', () => {
-			if(window.scrollY > 100) {
-				setBackToTop(true);
-			} else {
-				setBackToTop(false);
-			}
-		})
+		console.log('scroll');
+		window.addEventListener('scroll', handleScroll)
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+		}
 	}, [])
 
 	const scrollUp = () => {

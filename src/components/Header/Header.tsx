@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import Container from '../Container/Container';
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHook';
@@ -35,16 +35,16 @@ const handleBasketOpen = () => {
 
 const total = dataCart.reduce((acc, total) => acc + (total.price * total.count), 0);
 
-// const handleOusideClick = (e: MouseEvent) => {
-
-// if (outCloseReff.current && !outCloseReff.current.contains(e.target as Node)) {
-// 	setIsShowCard(false);
-// 	setIsOpenCatalog(false);
+const handleOusideClick = (e: MouseEvent) => {
+console.log("click");
+if (outCloseReff.current && !outCloseReff.current.contains(e.target as Node)) {
+	setIsShowCard(false);
+	setIsOpenCatalog(false);
 	
-// 	document.body.style.overflow = 'auto';
+	document.body.style.overflow = 'auto';
 
-// }
-// }
+}
+}
 
 const resetSneakersPage = () => {
 
@@ -77,25 +77,24 @@ const handleCloseBasketOnbackDrop = <T extends HTMLElement>(e: React.MouseEvent<
 	 }
 }
 
-// useEffect(() => {
-// 	document.addEventListener("click", handleOusideClick);
-// 	return () => {
-// 		document.removeEventListener("click", handleOusideClick);
-// 	}
-// }, [])
+useEffect(() => {
+	if(isOpenCatalog === true || isShowCard === true){
+		document.addEventListener("click", handleOusideClick);
+		return () => {
+			document.removeEventListener("click", handleOusideClick);
+		}
+	}
+
+}, [isShowCard, isOpenCatalog])
 
 
-// useEffect(() => {
-// 	if(isHeaderHidden){
-		
-// 		if(isShowCard === true || isOpenCatalog === true){
-// 			console.log("click Зшп");
-// 			setIsShowCard(false);
-// 			setIsOpenCatalog(false);
-// 		}
-		
-// 	}
-// }, [isHeaderHidden])
+useEffect(() => {
+	if(isHeaderHidden){
+		if(isOpenCatalog === true){
+			setIsOpenCatalog(false);
+		}
+	}
+}, [isHeaderHidden])
 
 	return (
 		<div>

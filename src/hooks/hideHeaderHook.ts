@@ -15,7 +15,7 @@ const useHideHeader = () => {
         setIsHeaderHidden(false);
       }
    
-  }, [lastScroll, isHeaderHidden]);
+  }, [lastScroll]);
 
   useEffect(() => {
     document.addEventListener("scroll", onScroll);
@@ -25,7 +25,7 @@ const useHideHeader = () => {
         setLastScroll(scrollTop);
       }
     };
-  }, [onScroll, scrollTop]);
+  }, [onScroll, lastScroll, scrollTop, isHeaderHidden]);
 
   return { scrollTop, setScrollTop, lastScroll, isHeaderHidden };
 };

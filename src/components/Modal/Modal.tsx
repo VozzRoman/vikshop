@@ -40,7 +40,7 @@ const handleOutSideClick = <T extends HTMLElement>(e: React.MouseEvent<T>) => {
 				< MdArrowBackIosNew  
 				className='fill-inherit'/>
 			</button>
-			<div className="relative max-w-[900px] w-[100%] md:max-h-[900px] max-h-[500px] h-full">
+			<div className="relative max-w-[900px] w-[100%] md:max-h-[900px] min-[430px]:max-h-[500px] max-h-[300px] h-full">
 			<button className='absolute top-0 right-0 z-50 m-4 ' 
 			onClick={onClose}>
 				<MdOutlineClose className='fill-orange-500 hover:fill-red-800 transition:fill duration-300' 
