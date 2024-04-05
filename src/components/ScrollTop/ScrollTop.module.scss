@@ -22,8 +22,8 @@
 	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
 	transform: scale(1);
 	animation: pulse 2s infinite;
-	visibility: hidden;
-	opacity: 0;
+	visibility: visible;
+	opacity: 100;
 	&.active{
 		visibility: visible;
 		opacity: 100;
