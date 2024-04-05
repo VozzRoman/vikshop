@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SlArrowUp } from "react-icons/sl";
 import scss from './ScrollTop.module.scss';
+import { Link } from 'react-router-dom';
 
 const ScrollTop = () => {
 	const [backToTop, setBackToTop] = useState<boolean>(false);
@@ -23,13 +24,13 @@ const ScrollTop = () => {
 	}
 	return (
 		<div>
-				<button 
+				<div 
 				onClick={scrollUp} 
 				className={`${scss.blob} ${backToTop && scss.active}`}>
 					<SlArrowUp 
 					size={25} 
 					color='white'/>
-				</button>
+				</div>
 		</div>
 	);
 };

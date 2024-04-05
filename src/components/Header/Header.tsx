@@ -87,9 +87,13 @@ const handleCloseBasketOnbackDrop = <T extends HTMLElement>(e: React.MouseEvent<
 
 useEffect(() => {
 	if(isHeaderHidden){
-		console.log("click");
-		setIsOpenCatalog(false);
-		setIsShowCard(false);
+		
+		if(isShowCard === true || isOpenCatalog === true){
+			console.log("click Зшп");
+			setIsShowCard(false);
+			setIsOpenCatalog(false);
+		}
+		
 	}
 }, [isHeaderHidden])
 
