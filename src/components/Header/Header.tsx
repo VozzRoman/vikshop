@@ -98,8 +98,91 @@ useEffect(() => {
 
 	return (
 		<div>
-			<header className={`md:pl-4 md:pr-4 pt-4 pb-4 bg-slate-800 md:top-0 md:fixed absolute w-full z-[300]
+			{/* <header className={`md:pl-4 md:pr-4 pt-4 pb-4 bg-slate-800 md:top-0 md:fixed absolute w-full z-[300]
 			${isHeaderHidden ? 'md:top-[-77px]' : 'md:top-0'}
+			transition:visible duration-500 ease-in-out
+			`}>
+				<Container>
+				<div 
+				ref={outCloseReff} 
+				className='relative'>
+				<div className='flex items-center justify-between relative'>
+					<Link className='md:block hidden' 
+					onClick={resetHomePage}  
+					to='/'>
+					<p className='text-white font-medium text-[30px] font-semibold whitespace-nowrap'>Vik<span className=' font-normal text-red-400'> Express</span></p>
+					</Link>
+					<button 
+					onClick={handleCatalogOpen} 
+					className='hidden md:inline-block max-w-[150px] w-full ml-5 bg-orange-300 rounded-sm h-[35px] mr-auto hover:bg-orange-400 transition-colors duration-300 text-white font-semibold'>
+					All Categories
+					</button>
+					<button 
+					onClick={handleCatalogOpen} 
+					className='md:hidden md:ml-5'>
+					<RxHamburgerMenu 
+					size={35} 
+					color='orange'/>
+					</button>
+					<div onClick={handleCloseBasketOnbackDrop} className={`absolute left-0 w-full h-screen bg-transparent md:top-[63px] top-[55px] transition:visible duration-500 ease-in-out
+					 ${isOpenCatalog ? "visible" : "invisible"} 
+					 ${isOpenCatalog ? "opacity-100" : "opacity-0"}
+					`}>
+					 <ul id="sidebar" className={classNames(`absolute 
+					 ${isOpenCatalog ? "visible" : "invisible"} 
+					 ${isOpenCatalog ? "h-[460px]" : "h-[0px]"} 
+					 ${isOpenCatalog ? "opacity-100" : "opacity-0"} 
+					 md:left-[0px] -left-[10px] bg-slate-400 z-[200] p-5 max-w-[200px] w-full rounded-sm transition:visible duration-500 ease-in-out shadow-md`)}>
+						<li className=''>
+							<NavLink onClick={resetHomePage}  className={scss.navLink} style={({ isActive }) => (isActive ? activeStyle : undefined)}  to="/">Home</NavLink>
+						</li>
+						<li className='' >
+							<NavLink onClick={resetSneakersPage}  className={scss.navLink} style={({ isActive }) => (isActive ? activeStyle : undefined)}  to="/sneakers">Sneakers</NavLink>
+						</li>
+						<li>
+							<NavLink onClick={closeCatalog} className={scss.navLink} style={({ isActive }) => (isActive ? activeStyle : undefined)} to="/t-shirts">T-Shirts</NavLink>
+						</li>
+						<li>
+							<NavLink onClick={closeCatalog} className={scss.navLink} style={({ isActive }) => (isActive ? activeStyle : undefined)} to="/testPage">Sports suit</NavLink>
+						</li>
+						<li>
+							<NavLink onClick={closeCatalog} className={`${scss.navLink} pointer-events-none opacity-50`} style={({ isActive }) => (isActive ? activeStyle : undefined)} to="/unabled">Caps</NavLink>
+						</li>
+						<li>
+							<NavLink onClick={closeCatalog} className={`${scss.navLink} pointer-events-none opacity-50`} style={({ isActive }) => (isActive ? activeStyle : undefined)} to="/unabled">Long sleeves</NavLink>
+						</li>
+						<li>
+							<NavLink onClick={closeCatalog} className={`${scss.navLink} pointer-events-none opacity-50`} style={({ isActive }) => (isActive ? activeStyle : undefined)} to="/unabled">Shorts</NavLink>
+						</li>
+						<li>
+							<NavLink onClick={closeCatalog} className={`${scss.navLink} pointer-events-none opacity-50`} style={({ isActive }) => (isActive ? activeStyle : undefined)} to="/unabled">Hoodie</NavLink>
+						</li>
+						<li>
+							<NavLink onClick={closeCatalog} className={scss.navLink} style={({ isActive }) => (isActive ? activeStyle : undefined)} to="/makeOrderPage">My orders</NavLink>
+						</li>
+					</ul>
+					</div>
+					<SearchForm />
+				<div>
+
+			<div className='relative'>
+				<PiShoppingCartSimpleBold className='w-9 h-9 cursor-pointer fill-orange-500 hover:fill-orange-300 transition ease-linear duration-300' 
+				onClick={handleBasketOpen}/>
+				<div className='absolute bottom-1 -left-1 z-30 bg-slate-100 w-4 h-4 rounded-full flex items-center justify-center'>
+					<p className='text-red-800 text-xs font-bold'>{dataCart.length}</p>
+				</div>
+			</div>
+				</div>
+				</div>
+				<Busket 
+				isShowCard={isShowCard} 
+				total={total} 
+				setIsShowCard={setIsShowCard}/>			
+				</div>
+				</Container>
+			</header> */}
+				<header className={`md:pl-4 md:pr-4 pt-4 pb-4 bg-slate-800 top-0 fixed w-full z-[300]
+			${isHeaderHidden ? 'top-[-77px]' : 'top-0'}
 			transition:visible duration-500 ease-in-out
 			`}>
 				<Container>
