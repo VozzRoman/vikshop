@@ -50,6 +50,14 @@ const PopularSlider: FC<PopularSliderProp> = ({filteredData}) => {
 			  }
 			},
 			{
+				breakpoint: 620,
+				settings: {
+				  slidesToShow: 2,
+				  slidesToScroll: 2,
+				  initialSlide: 2
+				}
+			 },
+			{
 			  breakpoint: 475,
 			  settings: {
 				 slidesToShow: 1,

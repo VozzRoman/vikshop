@@ -54,11 +54,11 @@ Save more with coupons</h2>
 				</div>
 			</div>
 			<h2 className='text-black-700 font-semibold text-2xl border-b-2 pb-2'>Popular sneakers</h2>
-			<div className='md:pl-7 md:pr-7 pl-14 pr-14'>
+			<div className='pl-7 pr-7'>
 			<PopularSlider filteredData={filteredSneakers}/>
 			</div>
 			<h2 className='text-black-700 font-semibold text-2xl border-b-2 pb-2 mt-10'>Popular T-shirts</h2>
-			<div className='md:pl-7 md:pr-7 pl-14 pr-14'>
+			<div className='pl-7 pr-7'>
 			<PopularSlider filteredData={filteredTshirts}/>
 			</div>
 			
