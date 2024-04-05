@@ -10,6 +10,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import classNames from 'classnames';
 import { filteredSneakers, resetSearchQeary } from '../../redux/Products/productSlice';
 import useHideHeader from '../../hooks/hideHeaderHook';
+import ScrollTop from '../ScrollTop/ScrollTop';
 
 
 
@@ -181,6 +182,7 @@ useEffect(() => {
 				</div>
 				</Container>
 			</header>
+			<ScrollTop/>
 				{/* <header className={`md:pl-4 md:pr-4 pt-4 pb-4 bg-slate-800 top-0 fixed w-full z-[300]
 			${isHeaderHidden ? 'top-[-77px]' : 'top-0'}
 			transition:visible duration-500 ease-in-out
