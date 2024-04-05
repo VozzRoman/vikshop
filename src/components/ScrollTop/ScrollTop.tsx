@@ -8,8 +8,10 @@ const ScrollTop = () => {
 
 	const handleScroll = () => {
 		if(window.scrollY > 100) {
+			
 			setBackToTop(true);
 		} else {
+			
 			setBackToTop(false);
 		}
 	}
@@ -20,23 +22,23 @@ const ScrollTop = () => {
 		return () => {
 			window.removeEventListener('scroll', handleScroll)
 		}
-	}, [])
+	}, [backToTop])
 
-	const scrollUp = () => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',
-		})
-	}
+	// const scrollUp = () => {
+	// 	window.scrollTo({
+	// 		top: 0,
+	// 		behavior: 'smooth',
+	// 	})
+	// }
 	return (
 		<div>
-				{backToTop && <div 
-				onClick={scrollUp} 
-				className={`${scss.blob}`}>
+				<button 
+				// onClick={scrollUp} 
+				className={`${scss.blob} ${backToTop && scss.active}`}>
 					<SlArrowUp 
 					size={25} 
 					color='white'/>
-				</div>}
+				</button>
 		</div>
 	);
 };
