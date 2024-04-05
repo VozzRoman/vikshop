@@ -13,7 +13,7 @@ const Layout = () => {
 			<Outlet/>
 			</section>
 		</main>
-		<ScrollTop/>
+		{/* <ScrollTop/> */}
 		<Footer/>
 		</div>
 	)
