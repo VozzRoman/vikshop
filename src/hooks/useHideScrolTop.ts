@@ -3,13 +3,23 @@ import  { useCallback, useEffect, useState } from 'react';
 const useHideScrolTop = () => {
 	const [scrollTop, setScrollTop] = useState<number>(0);
 	const [lastScroll, setLastScroll] = useState<number>(0);
- 
+	const [trigger, setTrigger] = useState<boolean>(false);
+	console.log("TOP", scrollTop);
+	console.log("LAST", lastScroll);
+
 	const onScroll = useCallback(() => {
+		
 	  setScrollTop(window.scrollY);
-	}, []);
+	  if(scrollTop > lastScroll){
+		setTrigger(true);
+	  } else {
+		setTrigger(false)
+	  }
+	  
+	}, [scrollTop ,trigger]);
  
 	useEffect(() => {
-	 
+	
 	  document.addEventListener("scroll", onScroll);
 	  return () => {
 		 document.removeEventListener("scroll", onScroll);
@@ -18,8 +28,8 @@ const useHideScrolTop = () => {
 		 }
 		 
 	  };
-	}, [onScroll, scrollTop]);
-	return { scrollTop, setScrollTop, lastScroll };
+	}, [onScroll]);
+	return { scrollTop, setScrollTop, lastScroll, trigger};
 
 };
 
