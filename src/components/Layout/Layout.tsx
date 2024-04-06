@@ -3,11 +3,11 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import { Outlet } from 'react-router-dom';
 import ScrollTop from '../ScrollTop/ScrollTop';
-import useHideScrolTop from '../../hooks/useHideScrolTop';
+// import useHideScrolTop from '../../hooks/useHideScrolTop';
 
 
 const Layout = () => {
-	const {trigger} = useHideScrolTop();
+	
 	return (
 		<div className='flex flex-col h-screen'>
 		<Header/>
@@ -17,7 +17,7 @@ const Layout = () => {
 			</section>
 		</main>
 		<Footer/>
-		{trigger && <ScrollTop/>}
+	<ScrollTop/>
 		</div>
 		
 	)

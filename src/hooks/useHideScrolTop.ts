@@ -4,8 +4,6 @@ const useHideScrolTop = () => {
 	const [scrollTop, setScrollTop] = useState<number>(0);
 	const [lastScroll, setLastScroll] = useState<number>(0);
 	const [trigger, setTrigger] = useState<boolean>(false);
-	console.log("TOP", scrollTop);
-	console.log("LAST", lastScroll);
 
 	const onScroll = useCallback(() => {
 		

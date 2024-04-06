@@ -99,7 +99,7 @@ useEffect(() => {
 
 	return (
 		<div>
-			<header className={`md:pl-4 md:pr-4 pt-4 pb-4 bg-slate-800 md:top-0 md:fixed absolute w-full z-[300]
+			{/* <header className={`md:pl-4 md:pr-4 pt-4 pb-4 bg-slate-800 md:top-0 md:fixed absolute w-full z-[300]
 			${isHeaderHidden ? 'md:top-[-77px]' : 'md:top-0'}
 			transition:visible duration-500 ease-in-out
 			`}>
@@ -181,9 +181,9 @@ useEffect(() => {
 				setIsShowCard={setIsShowCard}/>			
 				</div>
 				</Container>
-			</header>
+			</header> */}
 			
-				{/* <header className={`md:pl-4 md:pr-4 pt-4 pb-4 bg-slate-800 top-0 fixed w-full z-[300]
+				<header className={`md:pl-4 md:pr-4 pt-4 pb-4 bg-slate-800 top-0 fixed w-full z-[300]
 			${isHeaderHidden ? 'top-[-77px]' : 'top-0'}
 			transition:visible duration-500 ease-in-out
 			`}>
@@ -265,7 +265,7 @@ useEffect(() => {
 				setIsShowCard={setIsShowCard}/>			
 				</div>
 				</Container>
-			</header> */}
+			</header>
 		</div>
 	);
 };
