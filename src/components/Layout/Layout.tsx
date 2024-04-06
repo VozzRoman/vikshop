@@ -11,7 +11,7 @@ const Layout = () => {
 	return (
 		<div className='flex flex-col h-screen'>
 		<Header/>
-		<main className='flex-grow pt-[77px]'>
+		<main className='flex-grow'>
 			<section className='pb-10 pt-3'>
 			<Outlet/>
 			</section>
