@@ -18,7 +18,7 @@ const {lastScroll, scrollTop} = useHideScrolTop()
 		<div>
 				<button 
 				onClick={scrollUp} 
-				className={`${scss.blob} ${lastScroll < scrollTop && scss.active}`}>
+				className={`${scss.blob} ${lastScroll > scrollTop && scss.active}`}>
 					<SlArrowUp 
 					size={25} 
 					color='white'/>
