@@ -1,16 +1,17 @@
-import  { useEffect, useState } from 'react';
+import  { useCallback, useEffect, useState } from 'react';
 
 const useHideScrolTop = () => {
-		const [backToTop, setBackToTop] = useState<boolean>(false);
+		// const [backToTop, setBackToTop] = useState<boolean>(false);
+		const [scrollTop, setScrollTop] = useState<number>(0);
+		const [lastScroll, setLastScroll] = useState<number>(100);
 
-	const handleScroll = () => {
-		if(window.scrollY > 100) {
-			
-			setBackToTop(true);
-		} else {
-			setBackToTop(false);
-		}
-	}
+
+
+	const handleScroll = useCallback(() => {
+		const scrollPosition = window.scrollY || window.pageXOffset;
+		setScrollTop(scrollPosition);
+		
+	}, [])
 
 	useEffect(() => {
 		console.log('scroll');
@@ -19,7 +20,7 @@ const useHideScrolTop = () => {
 			document.removeEventListener('scroll', handleScroll)
 		}
 	}, [])
-	return {backToTop};
+	return {scrollTop, lastScroll, setLastScroll};
 };
 
 export default useHideScrolTop;

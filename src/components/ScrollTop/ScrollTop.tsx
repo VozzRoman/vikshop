@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { SlArrowUp } from "react-icons/sl";
 import scss from './ScrollTop.module.scss';
 import useHideScrolTop from '../../hooks/useHideScrolTop';
@@ -6,8 +6,7 @@ import useHideScrolTop from '../../hooks/useHideScrolTop';
 
 const ScrollTop = () => {
 
-const {backToTop} = useHideScrolTop()
-	
+const {lastScroll, scrollTop} = useHideScrolTop()
 	const scrollUp = () => {
 		window.scrollTo({
 			top: 0,
@@ -19,7 +18,7 @@ const {backToTop} = useHideScrolTop()
 		<div>
 				<button 
 				onClick={scrollUp} 
-				className={`${scss.blob} ${backToTop && scss.active}`}>
+				className={`${scss.blob} ${lastScroll < scrollTop && scss.active}`}>
 					<SlArrowUp 
 					size={25} 
 					color='white'/>
