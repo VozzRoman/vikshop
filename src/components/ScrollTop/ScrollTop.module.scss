@@ -24,11 +24,6 @@
 	animation: pulse 2s infinite;
 	visibility: visible;
 	opacity: 1;
-	&.active{
-		visibility: visible;
-		opacity: 100;
-
-	}
 }
 
 @keyframes pulse {

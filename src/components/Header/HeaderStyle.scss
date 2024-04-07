@@ -1,7 +1,4 @@
-.headroom-wrapper{
-	
-	
-}
+
 
 .header .headroom {
 position: relative;
@@ -19,7 +16,6 @@ position: relative;
 .header .headroom--unfixed {
   position: relative;
   top: 0;
-//   transform: translateY(0);
 opacity: 1;
 visibility: visible;
  
@@ -29,7 +25,6 @@ visibility: visible;
 }
 .header .headroom--unpinned {
   position: fixed;
-//   transform: translateY(-100%);
 	top: -77px;
   opacity: 0;
   visibility: hidden;
@@ -40,7 +35,4 @@ visibility: visible;
   opacity: 1;
   top: 0;
   visibility: visible;
-//   transform: translateY(0%);
- 
-  
 }
