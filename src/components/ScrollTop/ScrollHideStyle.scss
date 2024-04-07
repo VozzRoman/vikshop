@@ -1,8 +1,16 @@
 
+.scroll .headroom-wrappe {
+	position: fixed !important;
+	height: 0px;
+}
 .scroll .headroom {
-position: relative;
-  bottom: 0;
-  right: 0;
+
+position: fixed;
+  bottom: 100px;
+  right: 60px;
+  @media screen and (min-width: 768px) {
+	right: 20px;
+  }
   z-index: 300;
   background: #1d293c;
   padding: 10px 0px 10px 0;
@@ -13,7 +21,7 @@ position: relative;
 }
 .scroll .headroom--unfixed {
 position: relative;
-top: 0;
+bottom: 30px;
 opacity: 0;
 visibility: hidden;
  

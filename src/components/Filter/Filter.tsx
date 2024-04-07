@@ -73,6 +73,8 @@ if(model !=="" && size !=="" && price !== 0 && color !==""){
 			dispatch(mainFilter(dataValue))
 			if(filterIsReduxOpen === true){
 				setIsFilter(true)
+				document.body.style.overflow = 'auto';
+
 				return
 			} else {
 				setIsFilter(false);
@@ -88,8 +90,15 @@ if(model !=="" && size !=="" && price !== 0){
 		categories: filtredCategory,
 	}
 	dispatch(mainFilter(dataValue))
-	
-	return
+	if(filterIsReduxOpen === true){
+		setIsFilter(true)
+		document.body.style.overflow = 'auto';
+
+		return
+	} else {
+		setIsFilter(false);
+		return
+	}
 }
 //если выбраны значения model size color
 if(model !=="" && size !=="" && color !==""){
@@ -100,8 +109,14 @@ if(model !=="" && size !=="" && color !==""){
 		categories: filtredCategory,
 	}
 	dispatch(mainFilter(dataValue))
-
-	return
+	if(filterIsReduxOpen === true){
+		setIsFilter(true)
+		document.body.style.overflow = 'auto';
+		return
+	} else {
+		setIsFilter(false);
+		return
+	}
 }
 //если выбраны значения size color price
 if(size !=="" && color !=="" && price !== 0){
@@ -112,8 +127,14 @@ if(size !=="" && color !=="" && price !== 0){
 		categories: filtredCategory,
 	}
 	dispatch(mainFilter(dataValue))
-	setIsFilter(false);
-	return
+	if(filterIsReduxOpen === true){
+		setIsFilter(true)
+		document.body.style.overflow = 'auto';
+		return
+	} else {
+		setIsFilter(false);
+		return
+	}
 }
 //если выбраны значения model size
 if(model !=="" && size !==""){
@@ -126,6 +147,7 @@ if(model !=="" && size !==""){
 	dispatch(mainFilter(dataValue))
 	if(filterIsReduxOpen === true){
 		setIsFilter(true)
+		document.body.style.overflow = 'auto';
 		return
 	} else {
 		setIsFilter(false);
@@ -145,6 +167,7 @@ if(size !=="" && color !==""){
 	dispatch(mainFilter(dataValue))
 	if(filterIsReduxOpen === true){
 		setIsFilter(true)
+		document.body.style.overflow = 'auto';
 		return
 	} else {
 		setIsFilter(false);
@@ -161,6 +184,7 @@ if(model !=="" && color !==""){
 	dispatch(mainFilter(dataValue))
 	if(filterIsReduxOpen === true){
 		setIsFilter(true)
+		document.body.style.overflow = 'auto';
 		return
 	} else {
 		setIsFilter(false);
@@ -177,6 +201,7 @@ if(model !=="" && price !== 0){
 	dispatch(mainFilter(dataValue))
 	if(filterIsReduxOpen === true){
 		setIsFilter(true)
+		document.body.style.overflow = 'auto';
 		return
 	} else {
 		setIsFilter(false);
@@ -193,6 +218,7 @@ if(size !=="" && price !== 0){
 	dispatch(mainFilter(dataValue))
 	if(filterIsReduxOpen === true){
 		setIsFilter(true)
+		document.body.style.overflow = 'auto';
 		return
 	} else {
 		setIsFilter(false);
@@ -209,6 +235,7 @@ if(color !=="" && price !== 0){
 	dispatch(mainFilter(dataValue))
 	if(filterIsReduxOpen === true){
 		setIsFilter(true)
+		document.body.style.overflow = 'auto';
 		return
 	} else {
 		setIsFilter(false);
@@ -219,6 +246,7 @@ if(color !=="" && price !== 0){
 if(model !== ""){
 	 dispatch(mainFilter(model.toLocaleLowerCase())); 
 	 setIsFilter(false);
+	 document.body.style.overflow = 'auto';
 	 return 
 }
 if(size !== ""){
@@ -229,11 +257,13 @@ if(size !== ""){
 if(color !== ""){
 	dispatch(mainFilter(color));
 	setIsFilter(false);
+	document.body.style.overflow = 'auto';
 	return 
 }
 if(price !== 0){
 	dispatch(mainFilter(price));
 	setIsFilter(false);
+	document.body.style.overflow = 'auto';
 	return 
 } 
 dispatch(mainFilter(''))
@@ -246,10 +276,11 @@ const handleRestFilter = () => {
 		setSize('');
 		setColor('');
 		dispatch(mainFilter(''));
+		setIsFilter(false);
+		document.body.style.overflow = 'auto';
 		
 	}
 
-	//вчера!!!
 useEffect(() => {
 	if(filterIsReduxOpen === true){
 		setIsFilter(true)
@@ -265,7 +296,7 @@ useEffect(() => {
 	return (
 		<div 
 		onClick={handleOutSideClick} 
-		className={classNames(`absolute 
+		className={classNames(`absolute z-[300]
 		${isFilter ? "visible" : "invisible"} 
 		${isFilter ? "opacity-100" : "opacity-0"} 
 		transition:visible duration-300 bg-slate-500 w-full h-full left-0 top-0 z-50 bg-opacity-35`)}>

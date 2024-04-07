@@ -12,11 +12,6 @@ import { filteredSneakers, resetSearchQeary } from '../../redux/Products/product
 import Headroom from 'react-headroom';
 import './HeaderStyle.scss';
 
-
-
-
-
-
 const activeStyle = {
 	color: "#485667",
  };
@@ -27,7 +22,7 @@ const dataCart = useAppSelector(state => state.cartReducer.cart);
 const dispatch = useAppDispatch();
 const [isOpenCatalog, setIsOpenCatalog] = useState<boolean>(false);
 const [isShowCard, setIsShowCard] = useState<boolean>(false);
-
+const [onScrollPosition, setOnScrollPosition] = useState<number>(0);
 const outCloseReff = useRef<HTMLDivElement>(null);
 
 const handleBasketOpen = () => {
@@ -40,7 +35,6 @@ const handleBasketOpen = () => {
 const total = dataCart.reduce((acc, total) => acc + (total.price * total.count), 0);
 
 const handleOusideClick = (e: MouseEvent) => {
-console.log("click");
 if (outCloseReff.current && !outCloseReff.current.contains(e.target as Node)) {
 	setIsShowCard(false);
 	setIsOpenCatalog(false);
@@ -81,6 +75,14 @@ const handleCloseBasketOnbackDrop = <T extends HTMLElement>(e: React.MouseEvent<
 	 }
 }
 
+const onScroll = () => {
+	const scrollPosition = window.scrollY;
+	setOnScrollPosition(scrollPosition);
+	if(onScrollPosition > 0) {
+		setIsOpenCatalog(false)
+	}
+}
+
 useEffect(() => {
 	if(isOpenCatalog === true || isShowCard === true){
 		document.addEventListener("click", handleOusideClick);
@@ -91,17 +93,26 @@ useEffect(() => {
 
 }, [isShowCard, isOpenCatalog])
 
+useEffect(() => {
+if(isOpenCatalog === true){
+	document.addEventListener('scroll', onScroll);
+return () => {
+	document.removeEventListener('scroll', onScroll);
+}}
+}, [onScrollPosition, isOpenCatalog])
+
 
 
 
 	return (
 		<div>		
 				<Headroom className='header' disableInlineStyles>
+					
 				<Container>
 				<div 
 				ref={outCloseReff} 
 				className='relative'>
-				<div className='flex items-center justify-between relative'>
+				<div className='flex items-center justify-between'>
 					<Link className='md:block hidden' 
 					onClick={resetHomePage}  
 					to='/'>
@@ -109,7 +120,7 @@ useEffect(() => {
 					</Link>
 					<button 
 					onClick={handleCatalogOpen} 
-					className='hidden md:inline-block max-w-[150px] w-full ml-5 bg-orange-300 rounded-sm h-[35px] mr-auto hover:bg-orange-400 transition-colors duration-300 text-white font-semibold'>
+					className='hidden md:inline-block relative z-[300] max-w-[150px] w-full ml-5 bg-orange-300 rounded-sm h-[35px] mr-auto hover:bg-orange-400 transition-colors duration-300 text-white font-semibold'>
 					All Categories
 					</button>
 					<button 
@@ -119,7 +130,7 @@ useEffect(() => {
 					size={35} 
 					color='orange'/>
 					</button>
-					<div onClick={handleCloseBasketOnbackDrop} className={`absolute left-0 w-full h-screen bg-transparent md:top-[63px] top-[55px] transition:visible duration-500 ease-in-out
+					<div onClick={handleCloseBasketOnbackDrop} className={`absolute left-0 md:pt-[70px] pt-[60px] w-full h-screen top-[-10px] bg-transparent transition:visible duration-500 ease-in-out
 					 ${isOpenCatalog ? "visible" : "invisible"} 
 					 ${isOpenCatalog ? "opacity-100" : "opacity-0"}
 					`}>

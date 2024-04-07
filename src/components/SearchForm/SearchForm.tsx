@@ -59,7 +59,7 @@ const SearchForm: FC = () => {
 	return (
 		<form 
 		onSubmit={handleSubmit} 
-		className=' md:mr-10 mr-5 flex items-center h-[32px] max-w-[700px] w-[100%] ml-5'>
+		className=' md:mr-10 mr-5 relative flex items-center h-[32px] max-w-[700px] w-[100%] ml-5'>
 			<div className='relative w-full'>
 			<input 
 			className='w-full pt-2 pb-2 pl-3 pr-3 rounded-s-sm rounded-e-lg' 

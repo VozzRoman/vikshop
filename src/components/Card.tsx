@@ -98,9 +98,9 @@ const model: string = `?model=${item.name.split(' ').splice(1).join('_')}`
 				handleSelectSize={handleSelectSize} 
 				activeColor={activeColor} 
 				handleSelectColor={handleSelectColor}/>
-			<p className='text-gray-800 font-bold pt-1 pb-1 pl-[20px] pr-[20px]'>${item.price}</p> 
+			<p className='text-gray-800 md:text-lg text-2xl font-bold pt-1 pb-1 pl-[20px] pr-[20px]'>${item.price}</p> 
 			<div className='pb-5 pl-[20px] pr-[20px]'>
-			<button type='button' onClick={handleAddToCart} className='text-white  w-full md:pt-1.5 md:pb-1.5 md:pl-1.5 md:pr-1.5 pt-2 pb-2 bg-orange-500 hover:bg-orange-600 transition-all duration-300 rounded-sm mt-3 font-bold md:text-sm text-xl'>add to cart</button>
+			<button type='button' onClick={handleAddToCart} className='text-white  w-full md:pt-1.5 md:pb-1.5 md:pl-1.5 md:pr-1.5 pt-1 pb-1 bg-orange-500 hover:bg-orange-600 transition-all duration-300 rounded-sm mt-3 font-bold md:text-sm text-xl'>add to cart</button>
 			</div>
 			</div>
 			</div>

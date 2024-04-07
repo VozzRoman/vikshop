@@ -3,7 +3,6 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import { Outlet } from 'react-router-dom';
 import ScrollTop from '../ScrollTop/ScrollTop';
-// import useHideScrolTop from '../../hooks/useHideScrolTop';
 
 
 const Layout = () => {
@@ -16,8 +15,9 @@ const Layout = () => {
 			<Outlet/>
 			</section>
 		</main>
+		<ScrollTop/>
 		<Footer/>
-	<ScrollTop/>
+	
 		</div>
 		
 	)

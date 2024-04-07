@@ -44,18 +44,7 @@ const location = useLocation();
 						</div>
 					)
 				})}
-				{/* <div>
-					<img src='https://retailers.ua/media/news/1100-s-crop-w/00/05/5319/adi3drunner-770x485-9302.jpg' alt="" />
-					<div className='p-4 absolute top-10 right-20 z-20'>
-					<h2 className='font-semibold font-semibold text-white text-5xl w-full text-orange-300'>Sale</h2><span className='text-white font-semibold text-xl'>20% buy it now</span>
-				</div>
-				</div>
-				<div>
-					<img src='https://www.3dnatives.com/en/wp-content/uploads/sites/2/2021/05/584221_v2.jpg' alt="" />
-					<div className='p-4 absolute top-10 right-20 z-20'>
-					<h2 className='font-semibold font-semibold text-white text-5xl w-full text-orange-300'>Sale</h2><span className='text-white font-semibold text-xl'>20% buy it now</span>
-				</div>
-				</div> */}
+
 			</SliderHomePage>
 			</div>
 	);

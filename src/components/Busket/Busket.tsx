@@ -34,7 +34,7 @@ const handleDelte = (id: number, e: React.MouseEvent<HTMLButtonElement, MouseEve
 		className={classNames(`absolute 
 		${isShowCard ? "visible" : "invisible"} 
 		${isShowCard ? "opacity-100" : "opacity-0"}
-		md:top-[67px] top-[55px] md:right-0 right-3 w-full h-screen bg-transparent  transition:visible duration-500 ease-in-out z-50`)}>
+		 md:right-0 right-3 w-full h-screen bg-transparent top-[-10px] md:pt-[70px] pt-[60px]   transition:visible duration-500 ease-in-out z-50`)}>
 		<div className={classNames(`lg:max-h-[552px] absolute rounded-sm p-4 
 		${isShowCard ? "visible" : "invisible"} 
 		${isShowCard ? "opacity-100" : "opacity-0"}

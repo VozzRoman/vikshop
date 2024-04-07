@@ -24,7 +24,7 @@ const Tshirts: FC = () => {
 	const dispatch = useAppDispatch();
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [isFilter, setIsFilter] = useState<boolean>(false);
-	console.log(searchParams);
+	searchParams
 	//InfinitScroll
 	const [scrollProducts, setScrollProducts] = useState<IProducts[]>([]);
 	const [currentPage, setCurrentPage] = useState<number>(1);
@@ -44,7 +44,6 @@ const Tshirts: FC = () => {
 	useEffect(() => {
 		const startIndex = (currentPage - 1) * itemsPerPage;
 		const newProd = tShirts.slice(startIndex, startIndex + itemsPerPage);
-		console.log("NewProd", newProd);
 		setScrollProducts([...scrollProducts, ...newProd]);
 	
 	}, [currentPage]);
