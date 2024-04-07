@@ -1,0 +1,34 @@
+
+.scroll .headroom {
+position: relative;
+  bottom: 0;
+  right: 0;
+  z-index: 300;
+  background: #1d293c;
+  padding: 10px 0px 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  
+  
+}
+.scroll .headroom--unfixed {
+position: relative;
+top: 0;
+opacity: 0;
+visibility: hidden;
+ 
+}
+.scroll .headroom--scrolled {
+  transition: top 300ms linear, visibility 300ms linear, opacity 300ms linear;
+}
+.scroll .headroom--unpinned {
+  position: fixed;
+  opacity: 1;
+  visibility: visible;
+  
+}
+.scroll .headroom--pinned {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+}

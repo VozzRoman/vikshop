@@ -1,0 +1,46 @@
+.headroom-wrapper{
+	
+	
+}
+
+.header .headroom {
+position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 300;
+  background: #1d293c;
+  padding: 10px 0px 10px 0;
+  opacity: 1;
+  visibility: visible;
+  
+  
+}
+.header .headroom--unfixed {
+  position: relative;
+  top: 0;
+//   transform: translateY(0);
+opacity: 1;
+visibility: visible;
+ 
+}
+.header .headroom--scrolled {
+  transition: top 300ms linear, visibility 300ms linear, opacity 300ms linear;
+}
+.header .headroom--unpinned {
+  position: fixed;
+//   transform: translateY(-100%);
+	top: -77px;
+  opacity: 0;
+  visibility: hidden;
+  
+}
+.header .headroom--pinned {
+  position: fixed;
+  opacity: 1;
+  top: 0;
+  visibility: visible;
+//   transform: translateY(0%);
+ 
+  
+}

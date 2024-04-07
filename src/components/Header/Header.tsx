@@ -9,7 +9,10 @@ import SearchForm from '../SearchForm/SearchForm';
 import { RxHamburgerMenu } from "react-icons/rx";
 import classNames from 'classnames';
 import { filteredSneakers, resetSearchQeary } from '../../redux/Products/productSlice';
-import useHideHeader from '../../hooks/hideHeaderHook';
+import Headroom from 'react-headroom';
+import './HeaderStyle.scss';
+
+
 
 
 
@@ -24,7 +27,7 @@ const dataCart = useAppSelector(state => state.cartReducer.cart);
 const dispatch = useAppDispatch();
 const [isOpenCatalog, setIsOpenCatalog] = useState<boolean>(false);
 const [isShowCard, setIsShowCard] = useState<boolean>(false);
-const {isHeaderHidden} = useHideHeader();
+
 const outCloseReff = useRef<HTMLDivElement>(null);
 
 const handleBasketOpen = () => {
@@ -89,20 +92,11 @@ useEffect(() => {
 }, [isShowCard, isOpenCatalog])
 
 
-useEffect(() => {
-	if(isHeaderHidden){
-		if(isOpenCatalog === true){
-			setIsOpenCatalog(false);
-		}
-	}
-}, [isHeaderHidden])
+
 
 	return (
 		<div>		
-				<header className={`md:pl-4 md:pr-4 pt-4 pb-4 bg-slate-800 top-0 fixed w-full z-[300]
-			${isHeaderHidden ? 'top-[-77px]' : 'top-0'}
-			transition:visible duration-500 ease-in-out
-			`}>
+				<Headroom className='header' disableInlineStyles>
 				<Container>
 				<div 
 				ref={outCloseReff} 
@@ -181,7 +175,7 @@ useEffect(() => {
 				setIsShowCard={setIsShowCard}/>			
 				</div>
 				</Container>
-			</header>
+			</Headroom>
 		</div>
 	);
 };
